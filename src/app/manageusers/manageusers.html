@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md input-group">
+       <input type="text" [(ngModel)]="user.username" name="username" id="username" class="form-control">
+       <input type="button" value="update" class="btn btn-success" (click)="updateUser()" >
+      </div>
+    </div>
+</div>
+
+
+
+<div  class="table-responsive">
+    <table  class="table table-primary">
+        <thead>
+            <tr>
+                <th >ID</th>
+                <th >Username</th>
+                <th >Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="" *ngFor="let u of users">
+                <td>{{u._id}}</td>
+                <td>{{u.username}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="edit(u._id)" >Edit</button>
+                    <button class="btn btn-danger" (click)="deleteUser(u._id)">Delete</button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
